@@ -1,0 +1,53 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define mod 1000000007
+
+int sum(int arr[],int n)
+{
+    int sum=1;
+    for(int i=0;i<n;i++)
+    sum*=(arr[i]+1);
+    sum--;
+
+    return sum;
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    cout<<sum(arr,n)<<endl;
+    return 0;
+}
+
+/******
+
+Today you will learn about COMBO-ATTACKS. Two or more heroes can perform a Combo-Attack by attacking together at an opponent. 
+When they attack together their total attack power is product of their individual attack powers.
+For example Batman, Superman and Green Lantern have attack powers 10, 5, 2 resp. 
+then attack powers of combo-attack (Batman and Superman) is 50 (Batman and GL) is 20 and all of them together is 100.
+
+Input
+The first line of input contains integer n (1 <= n <= 10^5). The next line consists of n space seperated integers a[i] the attack powers of n superheroes
+(for all i 0 <= a[i] <= 10^7).
+
+Output
+Print the final answer modulo (10^9 + 7).
+You are a big superhero fan and want to calculate sum of all possible attacks that N superheroes can perform given their attack powers, 
+i.e. sum of all individual attacks + sum of all combo attacks.
+As the resulting number can be large calculate it modulo (10^9 + 7).
+
+SAMPLE INPUT 
+3
+10 5 2
+SAMPLE OUTPUT 
+197
+Explanation
+Attack powers of all possible attacks = 10+5+2+50+10+20+100
+ 
+******/
