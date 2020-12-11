@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int gcdDeletions(int arr[],int n)
+{
+    int curr=0;
+    for(int i=0;i<n;i++)
+        curr=__gcd(curr,arr[i]);
+
+        if(curr>1)
+        return -1;
+        else
+        return 0;
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        int arr[n];
+
+        for(int i=0;i<n;i++)
+        {
+            cin>>arr[i];
+        }
+        cout<<gcdDeletions(arr,n)<<endl;
+    }
+    return 0;
+}
+
+/*******
+
+You are given an array A of 'n' elements containing elements which are of positive value.
+The GCD of a set of numbers is the largest positive integer which divides each element of the set.
+You are allowed to delete up to 'n-1' elements from this sequence, i.e. you can delete any number of elements as long as the resulting sequence has at least one element.
+You are required to find the minimum number of elements that have to be deleted so that the GCD of each set of numbers is equal to 1.
+If it is impossible to make GCD equal to 1 print '-1' else '0'.
+
+The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+The first line of each test case contains a single integer N.
+The second line contains N space-separated integers A1, A2,…, AN.
+
+
+Constraints
+•    1≤T≤100
+•    2≤N≤1,000
+•    1≤Ai≤50,000 for each valid i
+ 
+
+SAMPLE INPUT 
+1 5 5 5 5 5 5 
+SAMPLE OUTPUT 
+-1
+*******/
